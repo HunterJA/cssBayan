@@ -24,7 +24,7 @@ body {
 
 .memes-item {
 	border-top: 0.2rem solid #808080;
-	margin-bottom: 1rem;
+	margin-bottom: 3rem;
 }
 
 .wrapper {
@@ -47,8 +47,7 @@ body {
 .memes-image {
 	display: none;
 	padding: 0.5rem 12rem;
-	transform: scale(0.6);
-    transition: transform 0.5s linear;
+	cursor: pointer;
 }
 
 .meme {
@@ -66,16 +65,20 @@ body {
 
 
 .fa {
-	transition: all 0.2s;
-	display: block;
-	color: #3333FF;
-	cursor: pointer;
+	transition: all 0.5s;
+	color: #808080;
 	padding: 0.5rem 1rem;
-	display: none;
+	display: block;
+	cursor: pointer;
+	opacity: 0;
 }
 
-.memes-input:checked + .memes-image{
+.memes-input:checked ~ .memes-image{
 	display: block;
+}
+
+.memes-input:checked ~ .fa{
+	transform: rotate(45deg);
 }
 
 .memes-input:active ~ .memes-image {
@@ -83,17 +86,38 @@ body {
 	transition: 0s ease-in-out;
 }
 
-.memes:active {
-	color: #808080;
-	/**/
+.memes:hover .fa {
+	opacity: 1;
+}
+
+.memes:hover .memes-title {
+	color:#808080
 }
 
 .memes-input:hover + .memes-image {
 	display: block;
-	transform: scale(1);
 }
 
 .memes-item:hover .fa {
 	transform: rotate(45deg);
-	color:#808080;
 }
+
+footer {
+	height: 15rem;
+}
+
+@media screen and (max-width: 1081px) {
+	html {
+	  font-size: 1rem;
+	}
+  @media screen and (max-width: 821px) {
+	html {
+	  font-size: 0.688rem;
+	}
+  }
+  @media screen and (max-width: 569px) {
+	html {
+	  font-size: 0.375rem;
+	}
+  }
+  }
