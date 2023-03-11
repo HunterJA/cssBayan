@@ -1,87 +1,98 @@
-/**
-* Компоненты аккордеона.
-*/
-.wrapper {
-	max-width: 80rem;
-	padding: 0 1.9rem;
-	margin: auto;
-  }
+body {
+	font-family: Arial, sans-serif;
+	font-size: 1.5rem;
+	font-weight: 700;
+	line-height: 1.5;
 
-.accordion {
-	margin: 0;
-	margin-bottom: 1.5rem;
-	padding: 0;
-	list-style: none;
-  }
-  .accordion_item {
-	border-bottom: 1px solid #5a95fd;
-  }
-  .accordion_item:last-of-type {
-	border-bottom: none;
-  }
-  /**
-  * Элемент label который запускает открыть/закрыть.
-  */
-  .accordion_trigger {
-	display: block;
-	background-color: #007ccf;
-	color: #ddd;
-	font-weight: normal;
-	cursor: pointer;
-	padding: 1.2em;
-  }
-  /* меняем цвет фона у активного переключателя */
-  .accordion_toggle:checked ~ .accordion_trigger {
-	background-color: #006bb3;
-  }
-  /**
-   * эти элементы radio/checkbox всегда должны быть скрыты.
-   */
-  .accordion_toggle {
-	position: absolute;
-	display: none;
-  }
-  /**
-  * скрытое содержание аккордеона.
-  */
-  .accordion_target {
-	border: 0;
-	clip: rect(0 0 0 0);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute;
-	width: 1px;
-	background-color: #ddd;
-	color: #444;
-  }
-  /**
-  * когда переключатель checked на radio/checkbox, показать содержимое аккордеона.
-  */
-  .accordion_toggle:checked ~ .accordion_target {
-	position: static;
-	overflow: visible;
-	clip: auto;
+	background-color: #FFFFCC;
+}
+
+*
+{
+	box-sizing: border-box;
+}
+
+.title {
+	text-align: start;
+}
+
+.memes {
+	width: 38rem;
 	margin: auto;
-	padding: 1.2rem;
-	width: auto;
-	height: auto;
-  /* задержка появления  функция анимации */
-	-webkit-animation:fadeIn ease-in 0.5s;
-	-moz-animation:fadeIn ease-in 0.5s;
-	animation:fadeIn ease-in 0.5s;
-  }
-  /* анимация при появлении блоков с содержанием */
-  @-moz-keyframes fadeIn {
-	  from { opacity: 0; }
-  to { opacity: 1 }
-  }
-  @-webkit-keyframes fadeIn {
-	  from { opacity: 0; }
-  to { opacity: 1 }
-  }
-  @keyframes fadeIn {
-	  from { opacity: 0; }
-  to { opacity: 1 }
-  }
+	cursor: pointer;
+}
+
+.memes-item {
+	border-top: 0.2rem solid #808080;
+	margin-bottom: 1rem;
+}
+
+.wrapper {
+	display: flex;
+	justify-content: space-between;
+}
+
+.memes-title {
+	display: block;
+	color: #3333FF;
+	cursor: pointer;
+	transition: color 0.2s ease-out;
+	padding: 0.5rem 1rem;
+}
+
+.memes-title:hover{
+	color: #808080;
+}
+
+.memes-image {
+	display: none;
+	padding: 0.5rem 12rem;
+	transform: scale(0.6);
+    transition: transform 0.5s linear;
+}
+
+.meme {
+	width: 20rem;
+	height: 20rem;
+}
+
+.memes-input {
+	width: 0;
+	height: 0;
+	-webkit-appearance: none;
+	appearance: none;
+	position: absolute;
+}
+
+
+.fa {
+	transition: all 0.2s;
+	display: block;
+	color: #3333FF;
+	cursor: pointer;
+	padding: 0.5rem 1rem;
+	display: none;
+}
+
+.memes-input:checked + .memes-image{
+	display: block;
+}
+
+.memes-input:active ~ .memes-image {
+	opacity: 0.33;
+	transition: 0s ease-in-out;
+}
+
+.memes:active {
+	color: #808080;
+}
+
+.memes-input:hover + .memes-image {
+	display: block;
+	transform: scale(1);
+}
+
+.memes-item:hover .fa {
+	transform: rotate(45deg);
+	color:#808080;
+}
