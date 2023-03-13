@@ -14,8 +14,14 @@ body {
 
 .title {
 	text-align: center;
-	margin: 0;
+	margin: 1rem;
 	color: #808080;
+}
+
+.container {
+	max-width: 62.5em;
+	margin: 3em auto;
+	padding: 0 2em;
 }
 
 .memes {
@@ -24,16 +30,13 @@ body {
 	cursor: pointer;
 }
 
-.memes-item {
-	margin: 0;
-}
-
 .wrapper {
 	display: flex;
 	justify-content: space-between;
-	margin: auto;
+	margin: 0;
 	border-top: 0.2rem solid #808080;
-	width: 35rem;
+	width: 36rem;
+	cursor: pointer;
 }
 
 .memes-title {
@@ -45,13 +48,19 @@ body {
 }
 
 .memes-image {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	text-align: center;
 	height: 0;
 	overflow: hidden;
-	transition: all 0.5s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	cursor: pointer;
+	margin: 0.4rem;
+}
 
+.memes-item {
+	overflow: hidden;
+	transition: all 0.3s ease;
+	display: flex;
+	flex-direction: column;
 }
 
 .meme {
@@ -67,7 +76,7 @@ body {
 }
 
 .fa {
-	transition: all 0.5s ease;
+	transition: all 0.3s ease;
 	color: #808080;
 	padding: 0.8rem 1rem;
 	display: block;
@@ -86,52 +95,57 @@ body {
 	opacity: 1;
 }
 
-.memes-input:active ~ .wrapper .fa.fa-plus {
-	color: #3333FF;
+.memes-input:checked + .memes-item {
+	opacity: 0.33;
+	transition: 0.3s ease-in-out;
 }
 
 .memes-input:checked ~ .wrapper .memes-title {
 	color: #808080;
 }
 
-.memes-input:active ~ .wrapper .memes-title {
+.memes-item:active .wrapper .memes-title {
 	color: #3333FF;
 }
 
-.memes-input:active ~ .memes-image {
+.memes-item:active img{
 	opacity: 0.33;
-	transition: 0.3s ease-in-out;
 }
 
+.memes-item:active .wrapper .fa.fa-plus{
+	color: #3333FF;
+}
 
-.memes-input:hover ~ .memes-image {
+@media(hover: hover) {
+
+	.memes-input:hover ~ .memes-image {
 	height: 18em;
 }
 
-.memes-item:hover .fa {
+	.wrapper:hover .fa {
 	transform: rotate(45deg);
 }
 
-.memes:hover .fa {
+	.memes:hover .fa {
 	opacity: 1;
 }
 
-.memes:hover .memes-title {
+	.memes:hover .memes-title {
 	color:#808080;
 }
-
-footer {
-  margin-bottom: 5rem;
 }
+
 
 @media screen and (max-width: 1081px) {
 	html {
 	  font-size: 1.2rem;
 	}
+
   @media screen and (max-width: 821px) {
 	html {
 	  font-size: 1rem;
 	}
+
   }
   @media screen and (max-width: 650px) {
 	html {
