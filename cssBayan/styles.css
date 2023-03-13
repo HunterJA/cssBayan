@@ -1,0 +1,155 @@
+body {
+	font-family: Arial, sans-serif;
+	font-size: 1.4rem;
+	font-weight: 700;
+	line-height: 1.5;
+	margin: 0;
+	background-color: #FFFFCC;
+}
+
+*
+{
+	box-sizing: border-box;
+}
+
+.title {
+	text-align: center;
+	margin: 1rem;
+	color: #808080;
+}
+
+.container {
+	max-width: 62.5em;
+	margin: 3em auto;
+	padding: 0 2em;
+}
+
+.memes {
+	width: 38rem;
+	margin: auto;
+	cursor: pointer;
+}
+
+.wrapper {
+	display: flex;
+	justify-content: space-between;
+	margin: 0;
+	border-top: 0.2rem solid #808080;
+	width: 36rem;
+	cursor: pointer;
+}
+
+.memes-title {
+	display: block;
+	color: #3333FF;
+	cursor: pointer;
+	transition: color 0.2s ease-out;
+	padding: 0.5rem 1rem;
+}
+
+.memes-image {
+	text-align: center;
+	height: 0;
+	overflow: hidden;
+	transition: all 0.3s ease-in-out;
+	cursor: pointer;
+	margin: 0.4rem;
+}
+
+.memes-item {
+	overflow: hidden;
+	transition: all 0.3s ease;
+	display: flex;
+	flex-direction: column;
+}
+
+.meme {
+	width: 25rem;
+	height: 25rem;
+}
+
+.memes-input {
+	width: 0;
+	height: 0;
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+.fa {
+	transition: all 0.3s ease;
+	color: #808080;
+	padding: 0.8rem 1rem;
+	display: block;
+	cursor: pointer;
+	opacity: 0;
+	padding: 1.5rem 1rem 0 0;
+}
+
+.memes-input:checked ~ .memes-image{
+	height: 18em;
+}
+
+.memes-input:checked ~ .wrapper .fa.fa-plus {
+	color: #808080;
+	transform: rotate(45deg);
+	opacity: 1;
+}
+
+.memes-input:checked + .memes-item {
+	opacity: 0.33;
+	transition: 0.3s ease-in-out;
+}
+
+.memes-input:checked ~ .wrapper .memes-title {
+	color: #808080;
+}
+
+.memes-item:active .wrapper .memes-title {
+	color: #3333FF;
+}
+
+.memes-item:active img{
+	opacity: 0.33;
+}
+
+.memes-item:active .wrapper .fa.fa-plus{
+	color: #3333FF;
+}
+
+@media(hover: hover) {
+
+	.memes-input:hover ~ .memes-image {
+	height: 18em;
+}
+
+	.wrapper:hover .fa {
+	transform: rotate(45deg);
+}
+
+	.memes:hover .fa {
+	opacity: 1;
+}
+
+	.memes:hover .memes-title {
+	color:#808080;
+}
+}
+
+
+@media screen and (max-width: 1081px) {
+	html {
+	  font-size: 1.2rem;
+	}
+
+  @media screen and (max-width: 821px) {
+	html {
+	  font-size: 1rem;
+	}
+
+  }
+  @media screen and (max-width: 650px) {
+	html {
+	  font-size: 0.5rem;
+	}
+  }
+  }
